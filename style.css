@@ -1,0 +1,1551 @@
+
+/* ========================================
+   TERRAVITA COMPOST S.A.S.
+   Estilos generales
+======================================== */
+
+:root {
+    --terra-red: #C3003A;
+    --terra-ochre: #A3702A;
+    --terra-dark: #23232A;
+    --terra-white: #FFFFFF;
+    --terra-muted: #BDB8BC;
+    --terra-bg: #19191F;
+    --terra-card: #28282F;
+    --terra-line: rgba(255, 255, 255, 0.12);
+    --terra-max: 1240px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+body {
+    margin: 0;
+    background: var(--terra-bg);
+    color: var(--terra-white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+section[id] {
+    scroll-margin-top: 30px;
+}
+
+/* ========================================
+   ENCABEZADO
+======================================== */
+
+.navbar {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 20px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    background: var(--terra-dark);
+    border-bottom: 1px solid var(--terra-line);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 12px;
+}
+
+.brand-logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.brand-name strong {
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+
+.brand-name small {
+    margin-top: 5px;
+    color: #D6A36A;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.nav-links > a {
+    color: #E0DDE0;
+    font-size: 13px;
+    transition: color 0.25s ease;
+}
+
+.nav-links > a:hover {
+    color: #D6A36A;
+}
+
+.nav-links .nav-cta {
+    padding: 11px 17px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 3px;
+}
+
+.nav-links .nav-cta:hover {
+    background: var(--terra-red);
+    border-color: var(--terra-red);
+    color: white;
+}
+
+/* ========================================
+   BOTONES
+======================================== */
+
+.btn-primary,
+.btn-secondary {
+    min-height: 48px;
+    padding: 13px 19px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-align: center;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.btn-primary {
+    background: var(--terra-red);
+    color: white;
+    border: 1px solid var(--terra-red);
+}
+
+.btn-primary:hover {
+    background: #A90032;
+    border-color: #A90032;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-secondary:hover {
+    border-color: #D6A36A;
+    color: #D6A36A;
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   INICIO / HERO
+======================================== */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    width: 100%;
+    min-height: 650px;
+    padding: 90px 7% 105px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: 55px;
+    background:
+        radial-gradient(
+            ellipse at 10% 10%,
+            rgba(195, 0, 58, 0.17),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 90% 90%,
+            rgba(163, 112, 42, 0.15),
+            transparent 40%
+        ),
+        var(--terra-dark);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 620px;
+    min-width: 0;
+    animation: heroEnter 0.8s ease both;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    color: #D8C9C9;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.tag-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--terra-red);
+    box-shadow: 0 0 14px rgba(195, 0, 58, 0.7);
+}
+
+.hero h1 {
+    margin: 0;
+    max-width: 650px;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1.08;
+    font-weight: 750;
+    letter-spacing: -2.5px;
+}
+
+.hero h1 span {
+    display: block;
+    margin-top: 8px;
+    color: #D6A36A;
+}
+
+.hero-description {
+    max-width: 490px;
+    margin: 25px 0 30px;
+    color: #C9C3C6;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 13px;
+}
+
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 35px;
+    color: #BDB8BC;
+    font-size: 12px;
+}
+
+.note-line {
+    width: 30px;
+    height: 1px;
+    flex-shrink: 0;
+    background: #D6A36A;
+}
+
+/* Imagen principal */
+
+.hero-visual {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-width: 0;
+    animation: heroEnter 1s ease 0.15s both;
+}
+
+.hero-image-frame {
+    position: relative;
+    width: 100%;
+    height: 460px;
+    overflow: hidden;
+    border-radius: 3px;
+    background: #34342D;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.7s ease;
+}
+
+.hero-image-frame:hover .hero-image {
+    transform: scale(1.04);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 45%,
+        rgba(20, 20, 24, 0.82) 100%
+    );
+}
+
+.image-label {
+    position: absolute;
+    right: 22px;
+    bottom: 22px;
+    left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.image-label span {
+    color: #E1C49D;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.image-label strong {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.floating-mark {
+    position: absolute;
+    top: -24px;
+    right: -20px;
+    width: 75px;
+    height: 75px;
+    display: grid;
+    place-items: center;
+    background: var(--terra-red);
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.hero-bottom {
+    position: absolute;
+    right: 7%;
+    bottom: 27px;
+    left: 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    color: #AAA3A9;
+    font-size: 9px;
+    letter-spacing: 1.2px;
+}
+
+.hero-bottom a {
+    color: #D6A36A;
+}
+
+/* ========================================
+   SECCIONES GENERALES
+======================================== */
+
+.section {
+    padding: 105px 7%;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 45px;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 17px;
+    color: #D6A36A;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.section-heading h2,
+.contact-copy h2 {
+    margin: 0;
+    font-size: clamp(34px, 4vw, 53px);
+    line-height: 1.15;
+    letter-spacing: -1.4px;
+}
+
+.section-heading h2 span,
+.contact-copy h2 span {
+    color: #D6A36A;
+}
+
+.section-heading > p {
+    max-width: 580px;
+    margin-top: 20px;
+    color: var(--terra-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.centered {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.centered > p {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* ========================================
+   NOSOTROS
+======================================== */
+
+.about {
+    background: var(--terra-bg);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: center;
+    gap: 65px;
+}
+
+.about-image {
+    height: 450px;
+    overflow: hidden;
+    background: var(--terra-card);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text h3 {
+    margin: 0 0 20px;
+    font-size: 25px;
+    line-height: 1.4;
+}
+
+.about-text > p {
+    color: var(--terra-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.values {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.value-item {
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-top: 1px solid var(--terra-line);
+}
+
+.value-item span {
+    color: #D6A36A;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.value-item strong {
+    font-size: 14px;
+}
+
+/* ========================================
+   BENEFICIOS
+======================================== */
+
+.benefits {
+    padding: 100px 7%;
+    background: #202026;
+}
+
+.benefit-grid {
+    width: 100%;
+    max-width: var(--terra-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.benefit-card {
+    position: relative;
+    padding: 35px 28px;
+    background: var(--terra-card);
+    border: 1px solid var(--terra-line);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(214, 163, 106, 0.55);
+}
+
+.benefit-number {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    color: #827B80;
+    font-size: 11px;
+}
+
+.benefit-icon {
+    margin-bottom: 22px;
+    font-size: 31px;
+}
+
+.benefit-card h3 {
+    margin: 0 0 12px;
+    font-size: 19px;
+}
+
+.benefit-card p {
+    margin: 0;
+    color: var(--terra-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* ========================================
+   PRODUCTOS
+======================================== */
+
+.products {
+    background: var(--terra-bg);
+}
+
+.product-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    overflow: hidden;
+    background: var(--terra-card);
+    border: 1px solid var(--terra-line);
+}
+
+.product-image {
+    position: relative;
+    min-height: 420px;
+    overflow: hidden;
+    background: #34342D;
+}
+
+.product-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-badge {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    padding: 9px 13px;
+    background: var(--terra-red);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.product-info {
+    padding: 45px;
+    align-self: center;
+}
+
+.product-info h3 {
+    margin: 0 0 17px;
+    font-size: 31px;
+}
+
+.product-info > p {
+    color: var(--terra-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.product-features {
+    display: grid;
+    gap: 12px;
+    margin: 25px 0 30px;
+    padding: 0;
+    list-style: none;
+    color: #E4DFE2;
+    font-size: 13px;
+}
+
+/* ========================================
+   PROCESO
+======================================== */
+
+.process {
+    padding: 100px 7%;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(163, 112, 42, 0.13),
+            transparent 55%
+        ),
+        #202026;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px;
+    max-width: var(--terra-max);
+    margin: 0 auto;
+}
+
+.process-step {
+    padding-top: 25px;
+    border-top: 1px solid rgba(214, 163, 106, 0.5);
+}
+
+.step-number {
+    color: #D6A36A;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.process-step h3 {
+    margin: 16px 0 10px;
+    font-size: 21px;
+}
+
+.process-step p {
+    margin: 0;
+    color: var(--terra-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* ========================================
+   CONTACTO
+======================================== */
+
+.contact {
+    background: var(--terra-bg);
+}
+
+.contact-card {
+    padding: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
+    background:
+        radial-gradient(
+            ellipse at 100% 0%,
+            rgba(195, 0, 58, 0.19),
+            transparent 55%
+        ),
+        #28282F;
+    border: 1px solid var(--terra-line);
+}
+
+.contact-copy {
+    max-width: 600px;
+}
+
+.contact-copy > p {
+    max-width: 500px;
+    margin-top: 20px;
+    color: var(--terra-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.contact-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 13px;
+    min-width: 235px;
+}
+
+/* ========================================
+   PIE DE PÁGINA
+======================================== */
+
+.footer {
+    padding: 35px 6%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    text-align: center;
+    background: #151519;
+    border-top: 1px solid var(--terra-line);
+}
+
+.footer-brand {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.footer-brand span {
+    color: #D6A36A;
+    font-size: 11px;
+}
+
+.footer p {
+    margin: 0;
+    color: var(--terra-muted);
+    font-size: 12px;
+}
+
+.footer small {
+    margin-top: 8px;
+    color: #8D878D;
+    font-size: 10px;
+}
+
+/* ========================================
+   ANIMACIÓN
+======================================== */
+
+@keyframes heroEnter {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+    .navbar {
+        padding: 20px 4%;
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links > a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 75px 5% 100px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 5vw, 55px);
+        letter-spacing: -1.7px;
+    }
+
+    .hero-image-frame {
+        height: 390px;
+    }
+
+    .section,
+    .benefits,
+    .process {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .about-grid {
+        gap: 35px;
+    }
+
+    .product-info {
+        padding: 30px;
+    }
+
+    .contact-card {
+        padding: 35px;
+    }
+}
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 650px) {
+    .navbar {
+        padding: 18px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .brand-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .brand-name strong {
+        font-size: 17px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 12px 18px;
+    }
+
+    .nav-links > a {
+        font-size: 12px;
+    }
+
+    .nav-links .nav-cta {
+        padding: 8px 11px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 58px 6% 85px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .hero-tag {
+        margin-bottom: 20px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 10vw, 54px);
+        letter-spacing: -1.7px;
+    }
+
+    .hero-description {
+        margin: 22px 0 25px;
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hero-actions a {
+        width: 100%;
+    }
+
+    .hero-note {
+        align-items: flex-start;
+        font-size: 11px;
+    }
+
+    .hero-image-frame {
+        height: 340px;
+    }
+
+    .floating-mark {
+        top: -14px;
+        right: -8px;
+        width: 58px;
+        height: 58px;
+        font-size: 25px;
+    }
+
+    .hero-bottom {
+        right: 6%;
+        bottom: 22px;
+        left: 6%;
+        font-size: 8px;
+        letter-spacing: 0.4px;
+    }
+
+    .hero-bottom a {
+        text-align: right;
+    }
+
+    .section,
+    .benefits,
+    .process {
+        padding: 70px 6%;
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .section-heading h2,
+    .contact-copy h2 {
+        font-size: clamp(32px, 8vw, 43px);
+    }
+
+    .about-grid,
+    .product-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .about-image {
+        height: 310px;
+    }
+
+    .about-text h3 {
+        font-size: 22px;
+    }
+
+    .values {
+        gap: 12px;
+    }
+
+    .benefit-grid,
+    .process-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .benefit-card {
+        padding: 28px 24px;
+    }
+
+    .product-image {
+        min-height: 300px;
+    }
+
+    .product-info {
+        padding: 28px 22px;
+    }
+
+    .product-info h3 {
+        font-size: 27px;
+    }
+
+    .product-info .btn-primary {
+        width: 100%;
+    }
+
+    .contact-card {
+        padding: 30px 22px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 25px;
+    }
+
+    .contact-actions {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .footer {
+        padding: 30px 5%;
+    }
+}
+
+/* Accesibilidad: reducir animaciones si el usuario lo prefiere */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* ========================================
+   PARTÍCULAS NATURALES ANIMADAS
+======================================== */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+}
+
+
+/* PARTICULAS PREMIUM TERRAVITA */
+
+/* PARTICULAS PREMIUM */
+.particles {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    color: #D6A36A;
+    opacity: 0;
+    font-size: 17px;
+    text-shadow:
+        0 0 8px rgba(214, 163, 106, 0.8),
+        0 0 18px rgba(195, 0, 58, 0.3);
+    animation: particleFloat 7s ease-in-out infinite;
+}
+
+/* Distribución por toda la sección */
+.p1  { top: 5%;  left: 5%;  animation-delay: 0s; }
+.p2  { top: 15%; left: 18%; animation-delay: 1s; }
+.p3  { top: 25%; left: 32%; animation-delay: 2s; }
+.p4  { top: 40%; left: 8%;  animation-delay: 3s; }
+.p5  { top: 55%; left: 22%; animation-delay: 1.5s; }
+.p6  { top: 70%; left: 7%;  animation-delay: 2.5s; }
+.p7  { top: 85%; left: 30%; animation-delay: 0.5s; }
+.p8  { top: 10%; left: 45%; animation-delay: 2s; }
+.p9  { top: 30%; left: 55%; animation-delay: 0.7s; }
+.p10 { top: 50%; left: 42%; animation-delay: 3.5s; }
+.p11 { top: 65%; left: 60%; animation-delay: 1.2s; }
+.p12 { top: 80%; left: 48%; animation-delay: 2.8s; }
+.p13 { top: 8%;  left: 70%; animation-delay: 1.8s; }
+.p14 { top: 20%; left: 88%; animation-delay: 0.4s; }
+.p15 { top: 35%; left: 75%; animation-delay: 2.2s; }
+.p16 { top: 45%; left: 95%; animation-delay: 3s; }
+.p17 { top: 60%; left: 82%; animation-delay: 1s; }
+.p18 { top: 75%; left: 92%; animation-delay: 2.6s; }
+.p19 { top: 90%; left: 72%; animation-delay: 0.8s; }
+.p20 { top: 95%; left: 15%; animation-delay: 3.2s; }
+.p21 { top: 12%; left: 27%; animation-delay: 2.4s; }
+.p22 { top: 38%; left: 22%; animation-delay: 1.7s; }
+.p23 { top: 58%; left: 38%; animation-delay: 0.3s; }
+.p24 { top: 72%; left: 35%; animation-delay: 3.4s; }
+.p25 { top: 18%; left: 60%; animation-delay: 1.4s; }
+.p26 { top: 42%; left: 65%; animation-delay: 2.9s; }
+.p27 { top: 68%; left: 73%; animation-delay: 0.6s; }
+.p28 { top: 82%; left: 85%; animation-delay: 1.9s; }
+.p29 { top: 28%; left: 95%; animation-delay: 3.1s; }
+.p30 { top: 52%; left: 5%;  animation-delay: 2.1s; }
+
+@keyframes particleFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(25px) rotate(0deg) scale(0.6);
+    }
+    25% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-20px) rotate(90deg) scale(1.2);
+    }
+    75% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-55px) rotate(180deg) scale(0.7);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .particle {
+        animation: none;
+        opacity: 0.5;
+    }
+}
+
+/* =================================
+   WHATSAPP FLOTANTE - TERRAVITA
+================================= */
+
+.whatsapp-float {
+    position: fixed;
+    right: 26px;
+    bottom: 26px;
+    z-index: 9999;
+
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    background: linear-gradient(145deg, #25D366, #128C4A);
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 24px rgba(18, 140, 74, 0.35),
+        0 0 0 0 rgba(37, 211, 102, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    animation: whatsappPulse 2.5s infinite;
+}
+
+.whatsapp-float svg {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px) scale(1.06);
+    box-shadow: 0 12px 30px rgba(18, 140, 74, 0.45);
+    animation: none;
+}
+
+.whatsapp-float:hover svg {
+    transform: rotate(-8deg);
+}
+
+/* Mensaje al pasar el cursor */
+.whatsapp-tooltip {
+    position: absolute;
+    right: 76px;
+    top: 50%;
+    transform: translateY(-50%) translateX(8px);
+
+    width: max-content;
+    max-width: 220px;
+    padding: 11px 15px;
+    border-radius: 10px;
+
+    background: #23232A;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.16);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s ease;
+}
+
+.whatsapp-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+
+    border: 6px solid transparent;
+    border-left-color: #23232A;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* Animación suave */
+@keyframes whatsappPulse {
+    0%, 100% {
+        box-shadow:
+            0 8px 24px rgba(18, 140, 74, 0.35),
+            0 0 0 0 rgba(37, 211, 102, 0.35);
+    }
+
+    50% {
+        box-shadow:
+            0 8px 24px rgba(18, 140, 74, 0.35),
+            0 0 0 10px rgba(37, 211, 102, 0);
+    }
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+    .whatsapp-float {
+        right: 17px;
+        bottom: 18px;
+        width: 56px;
+        height: 56px;
+    }
+
+    .whatsapp-float svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .whatsapp-tooltip {
+        display: none;
+    }
+}
+
+/* Respetar preferencias de movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-float {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* =====================================
+   EFECTOS PREMIUM - TERRAVITA
+===================================== */
+
+/* Transiciones suaves para tarjetas */
+.card,
+.benefit-card,
+.product-card,
+.feature-card,
+.value-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.card:hover,
+.benefit-card:hover,
+.product-card:hover,
+.feature-card:hover,
+.value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 38px rgba(35, 35, 42, 0.13);
+}
+
+/* Efecto elegante en imágenes */
+img {
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover img,
+.benefit-card:hover img,
+.feature-card:hover img {
+    transform: scale(1.04);
+}
+
+/* Efecto en botones */
+button,
+.btn,
+a.btn,
+.button {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+.btn:hover,
+.button:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.07);
+}
+
+/* Accesibilidad: reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* APARICIÓN SUAVE AL HACER SCROLL */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Evitar animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+
+/* ==========================================
+   TARJETAS PREMIUM - TERRAVITA COMPOST
+========================================== */
+
+/* Animación suave de las tarjetas */
+.card,
+.benefit-card,
+.product-card,
+.feature-card,
+.value-card,
+.about-card,
+.process-card,
+section article {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* Elevación al pasar el cursor */
+.card:hover,
+.benefit-card:hover,
+.product-card:hover,
+.feature-card:hover,
+.value-card:hover,
+.about-card:hover,
+.process-card:hover,
+section article:hover {
+    transform: translateY(-9px);
+    box-shadow:
+        0 18px 35px rgba(35, 35, 42, 0.12),
+        0 5px 12px rgba(163, 112, 42, 0.10);
+}
+
+/* Zoom suave en imágenes de tarjetas */
+.card img,
+.benefit-card img,
+.product-card img,
+.feature-card img,
+.value-card img,
+.about-card img,
+.process-card img,
+section article img {
+    transition: transform 0.45s ease;
+}
+
+.card:hover img,
+.benefit-card:hover img,
+.product-card:hover img,
+.feature-card:hover img,
+.value-card:hover img,
+.about-card:hover img,
+.process-card:hover img,
+section article:hover img {
+    transform: scale(1.05);
+}
+
+/* Brillo elegante en botones */
+.btn:hover,
+.button:hover,
+button:hover {
+    box-shadow: 0 8px 22px rgba(195, 0, 58, 0.18);
+    transform: translateY(-3px);
+}
+
+/* Bordes redondeados y sombra al pasar el cursor */
+.card:hover,
+.benefit-card:hover,
+.product-card:hover,
+.feature-card:hover,
+.value-card:hover,
+.about-card:hover,
+.process-card:hover {
+    border-color: rgba(163, 112, 42, 0.35);
+}
+
+/* Evitar movimientos excesivos en celulares */
+@media (max-width: 768px) {
+    .card:hover,
+    .benefit-card:hover,
+    .product-card:hover,
+    .feature-card:hover,
+    .value-card:hover,
+    .about-card:hover,
+    .process-card:hover,
+    section article:hover {
+        transform: translateY(-3px);
+    }
+}
+
+/* Respetar las preferencias de movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .benefit-card,
+    .product-card,
+    .feature-card,
+    .value-card,
+    .about-card,
+    .process-card,
+    section article,
+    .card img,
+    .benefit-card img,
+    .product-card img,
+    .feature-card img,
+    .value-card img,
+    .about-card img,
+    .process-card img,
+    section article img {
+        transition: none !important;
+    }
+}
+
+
+/* =====================================
+   CONTADOR AMBIENTAL - TERRAVITA
+===================================== */
+
+.impact-section {
+    position: relative;
+    padding: 90px 7%;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(163, 112, 42, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #23232A, #303039);
+    color: #ffffff;
+}
+
+.impact-container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.impact-heading {
+    max-width: 700px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.impact-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #D6A36A;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.impact-heading h2 {
+    margin: 0 0 18px;
+    font-size: clamp(28px, 4vw, 43px);
+    line-height: 1.2;
+}
+
+.impact-heading p {
+    margin: 0;
+    color: #D8D8DE;
+    line-height: 1.8;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.impact-card {
+    padding: 34px 22px;
+    text-align: center;
+    border: 1px solid rgba(214, 163, 106, 0.25);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.045);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    transition: transform 0.35s ease,
+                border-color 0.35s ease,
+                background 0.35s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-8px);
+    border-color: #D6A36A;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.impact-icon {
+    margin-bottom: 15px;
+    font-size: 36px;
+}
+
+.impact-card h3 {
+    margin: 0 0 12px;
+    color: #D6A36A;
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: 800;
+}
+
+.impact-suffix {
+    font-size: inherit;
+}
+
+.impact-card p {
+    margin: 0;
+    color: #EEEEF0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.impact-note {
+    margin: 28px 0 0;
+    color: #BDBDC5;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .impact-section {
+        padding: 65px 6%;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .impact-card {
+        padding: 26px 20px;
+    }
+}
