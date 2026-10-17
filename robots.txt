@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://julsxla.github.io/terravita/sitemap.xml
